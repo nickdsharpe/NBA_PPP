@@ -1,18 +1,18 @@
-,ACO,C/S,CUT,EMBIID,HARDEN,ISO,MAXEY,MELTON,MILTON,NIANG,OBS,OREB,OTHERS,REED,TRAN,TUCKER,PNR,TOTAL
-Total PPP,1.06,1.12,N/A,nan,nan,1.18,nan,nan,nan,nan,2.0,1.5,1.38,nan,1.06,nan,1.09,1.17
-% of Poss.,11.5%,10.5%,0.0%,nan%,nan%,42.2%,nan%,nan%,nan%,nan%,2.2%,1.0%,6.7%,nan%,25.9%,nan%,22.0%,313.0
-Total FG%,52.9%,37.5%,N/A,nan%,nan%,52.0%,nan%,nan%,nan%,nan%,75.0%,50.0%,53.8%,nan%,48.3%,nan%,43.9%,49.6%
-Shooting PPP,1.24,1.12,N/A,nan,nan,1.28,nan,nan,nan,nan,1.67,N/A,0.83,nan,0.92,nan,1.17,1.15
-% of Shooting Poss.,12.8%,12.8%,0.0%,nan%,nan%,44.7%,nan%,nan%,nan%,nan%,1.9%,0.0%,3.1%,nan%,24.5%,nan%,95.7% | 38.0,82.1% | 107.0
-Shooting FG%,64.3%,37.5%,N/A,nan%,nan%,56.4%,nan%,nan%,nan%,nan%,66.7%,N/A,33.3%,nan%,33.3%,nan%,47.4%,47.7%
-Shooting 2pt Att.,13,0,0,nan,nan,32,nan,nan,nan,nan,1,0,4,nan,15,nan,13.0,65.0
-Shooting 2pt FG%,69.2%,N/A,N/A,nan%,nan%,59.4%,nan%,nan%,nan%,nan%,100.0%,N/A,25.0%,nan%,46.7%,nan%,69.2%,56.9%
-Shooting 3pt Att.,1,24,0,nan,nan,7,nan,nan,nan,nan,2,0,2,nan,6,nan,25.0,42.0
-Shooting 3pt FG%,0.0%,37.5%,N/A,nan%,nan%,42.9%,nan%,nan%,nan%,nan%,50.0%,N/A,50.0%,nan%,0.0%,nan%,36.0%,33.3%
-Passing PPP,0.0,N/A,N/A,nan,nan,0.77,nan,nan,nan,nan,3.0,1.5,1.86,nan,1.52,nan,0.0,1.23
-% of Passing Poss.,5.4%,0.0%,0.0%,nan%,nan%,30.4%,nan%,nan%,nan%,nan%,3.6%,5.4%,23.2%,nan%,32.1%,nan%,4.3% | 3.0,17.9% | 32.0
-Passing FG%,0.0%,N/A,N/A,nan%,nan%,36.4%,nan%,nan%,nan%,nan%,100.0%,50.0%,71.4%,nan%,87.5%,nan%,0.0%,56.2%
-Passing 2pt Att.,0,0,0,nan,nan,4,nan,nan,nan,nan,0,0,3,nan,7,nan,0.0,14.0
-Passing 2pt FG%,N/A,N/A,N/A,nan%,nan%,50.0%,nan%,nan%,nan%,nan%,N/A,N/A,100.0%,nan%,85.7%,nan%,nan%,78.6%
-Passing 3pt Att.,3,0,0,nan,nan,7,nan,nan,nan,nan,1,2,4,nan,1,nan,3.0,18.0
-Passing 3pt FG%,0.0%,N/A,N/A,nan%,nan%,28.6%,nan%,nan%,nan%,nan%,100.0%,50.0%,50.0%,nan%,100.0%,nan%,0.0%,38.9%
+,EMBIID,REED,TUCKER,NIANG,OTHERS,ISO,Transition,Attacking Closeouts,Catch & Shoot,Off Ball Screens,Cutting,Off. Rebounds,PNR / DHO,TOTAL
+Total PPP,1.24,1.43,1.02,1.0,1.33,1.2,1.07,1.11,1.04,2.0,N/A,0.0,1.24,1.17
+% of Poss.,17.7%,3.5%,2.4%,2.5%,4.5%,27.8%,18.6%,9.8%,11.4%,2.0%,0.0%,0.5%,29.9%,201
+Total FG%,50.0%,71.4%,25.0%,40.0%,55.6%,52.4%,48.0%,56.2%,34.8%,75.0%,N/A,0.0%,50.9%,49.4%
+Shooting PPP,0.8,1.2,1.02,0.0,1.14,1.28,0.95,1.31,1.04,1.67,N/A,N/A,0.88,1.09
+% of Shooting Poss.,14.7%,3.1%,3.0%,1.8%,4.3%,28.7%,18.7%,10.3%,14.1%,1.8%,0.0%,0.0%,71.7%,81.1%
+Shooting FG%,38.1%,60.0%,25.0%,0.0%,42.9%,57.6%,35.0%,69.2%,34.8%,66.7%,N/A,N/A,37.5%,45.5%
+Shooting 2pt Att.,15,5,2,0,4,30,14,13,0,1,0,0,26,84
+Shooting 2pt FG%,46.7%,60.0%,0.0%,N/A,25.0%,56.7%,50.0%,69.2%,N/A,100.0%,N/A,N/A,42.3%,53.6%
+Shooting 3pt Att.,6,0,2,3,3,3,6,0,23,2,0,0,14,48
+Shooting 3pt FG%,16.7%,N/A,50.0%,0.0%,66.7%,66.7%,0.0%,N/A,34.8%,50.0%,N/A,N/A,28.6%,31.2%
+Passing PPP,2.15,2.0,N/A,2.5,2.0,0.78,1.6,0.0,N/A,3.0,N/A,0.0,2,1.53
+% of Passing Poss.,30.6%,5.3%,0.0%,5.3%,5.3%,23.7%,18.1%,7.9%,0.0%,2.6%,0.0%,2.6%,28.3%,18.9%
+Passing FG%,77.8%,100.0%,N/A,100.0%,100.0%,33.3%,100.0%,0.0%,N/A,100.0%,N/A,0.0%,86.7%,64.7%
+Passing 2pt Att.,3,2,0,1,2,4,4,0,0,0,0,0,8,16
+Passing 2pt FG%,66.7%,100.0%,N/A,100.0%,100.0%,50.0%,100.0%,N/A,N/A,N/A,N/A,N/A,87.5%,81.2%
+Passing 3pt Att.,6,0,0,1,0,5,1,3,0,1,0,1,7,18
+Passing 3pt FG%,83.3%,N/A,N/A,100.0%,N/A,20.0%,100.0%,0.0%,N/A,100.0%,N/A,0.0%,85.7%,50.0%
