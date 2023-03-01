@@ -344,8 +344,6 @@ def PPP(data):
     except(ZeroDivisionError):
         PNRtotPoss_per = 'N/A'
     
-    col_dicts = {col_name: data[col_name].to_dict() for col_name in data.columns}
-    
     # Create the index
     index = ['Total PPP', '% of Poss.', 'Total FG%', 
              'Shooting PPP', '% of Shooting Poss.', 'Shooting FG%', 'Shooting 2pt Att.', 'Shooting 2pt FG%', 'Shooting 3pt Att.', 'Shooting 3pt FG%',
@@ -364,6 +362,10 @@ def PPP(data):
                         str(shootingPPP_tot), str(shootPoss_perOVR), str(shootFG_per), str(shoot2FGA), str(shoot2FG_per), str(shoot3FGA), str(shoot3FG_per),
                         str(passingPPP_tot), str(passingPoss_perOVR), str(passFG_per), str(pass2FGA), str(pass2FG_per), str(pass3FGA), str(pass3FG_per)]
     
+    # Create dictionary for each column
+    col_dicts = {col_name: data[col_name].to_dict() for col_name in data.columns}
+    
+    # Loop over each column dictionary to create new calculated column
     for i, col_dict in col_dicts.items():
         
         shoot2FGA = col_dict['shoot2FGA']
@@ -532,5 +534,7 @@ def PPP(data):
     
     # Rename column headers
     data_df = data_df.rename(columns={'TRAN' : 'Transition', 'ACO' : 'Attacking Closeouts', "C/S" : "Catch & Shoot", "OBS" : "Off Ball Screens", "CUT" : "Cutting", "OREB" : "Off. Rebounds", "PNR" :"PNR / DHO"})
+    
+    data_df = data_df.transpose()
     
     return(data_df)
