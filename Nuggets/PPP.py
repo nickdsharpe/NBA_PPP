@@ -344,23 +344,31 @@ def PPP(data):
     except(ZeroDivisionError):
         PNRtotPoss_per = 'N/A'
     
+    # Calculate turnovers an turnover percentage
+    total_to = TO2 + TO3
+    shoot_to = shoot2TO + shoot3TO
+    pass_to = pass2TO + pass3TO
+    pnr_to = PNRTO2 + PNRTO3
+    PNRshoot_to = PNRshoot2TO + PNRshoot3TO
+    PNRpass_to = PNRpass2TO + PNRpass3TO
+    total_to_per = round((total_to / totPossOVR),1)
     # Create the index
-    index = ['Total PPP', '% of Poss.', 'Total FG%', 
-             'Shooting PPP', '% of Shooting Poss.', 'Shooting FG%', 'Shooting 2pt Att.', 'Shooting 2pt FG%', 'Shooting 3pt Att.', 'Shooting 3pt FG%',
-             'Passing PPP', '% of Passing Poss.', 'Passing FG%', 'Passing 2pt Att.', 'Passing 2pt FG%', 'Passing 3pt Att.', 'Passing 3pt FG%']   
+    index = ['Total PPP', '% of Poss.', 'Total TO', 'Total FG%', 
+             'Shooting PPP', '% of Shooting Poss.', 'Shooting TO', 'Shooting FG%', 'Shooting 2pt Att.', 'Shooting 2pt FG%', 'Shooting 3pt Att.', 'Shooting 3pt FG%',
+             'Passing PPP', '% of Passing Poss.', 'Passing TO', 'Passing FG%', 'Passing 2pt Att.', 'Passing 2pt FG%', 'Passing 3pt Att.', 'Passing 3pt FG%']   
     
     # Create the PPP DataFrame
     data_df = pd.DataFrame(columns=headers, index=index)
     
     # Create 'PNR' column using PNR data
-    data_df['PNR'] = [str(PNRppp_tot), (str(PNRtotPoss_per)), (str(PNRtotFG_per)), 
-                        str(PNRshootingPPP_tot), str(PNRshootPoss_perOVR), str(PNRshootFG_per), str(PNRshoot2FGA), str(PNRshoot2FG_per), str(PNRshoot3FGA), str(PNRshoot3FG_per),
-                        str(PNRpassingPPP_tot), str(PNRpassingPoss_perOVR), str(PNRpassFG_per), str(PNRpass2FGA), str(PNRpass2FG_per), str(PNRpass3FGA), str(PNRpass3FG_per)]
+    data_df['PNR'] = [str(PNRppp_tot), (str(PNRtotPoss_per)), pnr_to, (str(PNRtotFG_per)), 
+                        str(PNRshootingPPP_tot), str(PNRshootPoss_perOVR), PNRshoot_to, str(PNRshootFG_per), str(PNRshoot2FGA), str(PNRshoot2FG_per), str(PNRshoot3FGA), str(PNRshoot3FG_per),
+                        str(PNRpassingPPP_tot), str(PNRpassingPoss_perOVR), PNRpass_to, str(PNRpassFG_per), str(PNRpass2FGA), str(PNRpass2FG_per), str(PNRpass3FGA), str(PNRpass3FG_per)]
     
     #Create the 'TOTAL' column at the end of the dataframe
-    data_df['TOTAL'] = [str(ppp_tot), (str(totPossOVR)), (str(totFG_per)), 
-                        str(shootingPPP_tot), str(shootPoss_perOVR), str(shootFG_per), str(shoot2FGA), str(shoot2FG_per), str(shoot3FGA), str(shoot3FG_per),
-                        str(passingPPP_tot), str(passingPoss_perOVR), str(passFG_per), str(pass2FGA), str(pass2FG_per), str(pass3FGA), str(pass3FG_per)]
+    data_df['TOTAL'] = [str(ppp_tot), (str(totPossOVR)), total_to, (str(totFG_per)), 
+                        str(shootingPPP_tot), str(shootPoss_perOVR), shoot_to, str(shootFG_per), str(shoot2FGA), str(shoot2FG_per), str(shoot3FGA), str(shoot3FG_per),
+                        str(passingPPP_tot), str(passingPoss_perOVR), pass_to, str(passFG_per), str(pass2FGA), str(pass2FG_per), str(pass3FGA), str(pass3FG_per)]
     
     # Create dictionary for each column
     col_dicts = {col_name: data[col_name].to_dict() for col_name in data.columns}
@@ -400,6 +408,10 @@ def PPP(data):
         FTA3 = pass3FTA + shoot3FTA
         FTM3 = pass3FTM + shoot3FTM
         TO3 = pass3TO + shoot3TO
+        
+        total_to = TO2 + TO3
+        shoot_to = shoot2TO + shoot3TO
+        pass_to = pass2TO + pass3TO
         
         try:
             shootingPPP_tot = round(((shoot2FGM * 2) + (shoot3FGM * 3) + (shoot2FTM + shoot3FTM)) / ((shoot2FGA + shoot3FGA) + ((shoot2FTA + shoot3FTA) * 0.44) + (shoot2TO + shoot3TO)),2)
@@ -525,9 +537,9 @@ def PPP(data):
         except(ZeroDivisionError):
             tot3FG_per = 'N/A'
        
-        data_df[i] = [str(ppp_tot), str((totPoss_per)), (str(totFG_per)),
-                      str(shootingPPP_tot), str(shootPoss_per), (str(shootFG_per)), str(shoot2FGA), str(shoot2FG_per), str(shoot3FGA), str(shoot3FG_per),
-                      str(passingPPP_tot), str(passingPoss_per), str(passFG_per), str(pass2FGA), str(pass2FG_per), str(pass3FGA), str(pass3FG_per)]
+        data_df[i] = [str(ppp_tot), str((totPoss_per)), total_to, (str(totFG_per)),
+                      str(shootingPPP_tot), str(shootPoss_per), shoot_to, (str(shootFG_per)), str(shoot2FGA), str(shoot2FG_per), str(shoot3FGA), str(shoot3FG_per),
+                      str(passingPPP_tot), str(passingPoss_per), pass_to, str(passFG_per), str(pass2FGA), str(pass2FG_per), str(pass3FGA), str(pass3FG_per)]
         
     timeEnd = time.time()
     #print(timeEnd - timeStart)
