@@ -1,18 +1,15 @@
-,POWELL,WOOD,KLEBER,MCGEE,OTHERS,ISO,TRAN,ACO,C/S,OBS,CUT,OREB,TOTAL
-Total PPP,1.0,0.0,N/A,0.0,N/A,1.25,0.0,1.01,1.31,N/A,0.69,0.0,1.01
-% of Poss.,4.7%,2.3%,0.0%,2.3%,0.0%,9.3%,4.7%,27.9%,37.2%,0.0%,9.3%,2.3%,43
-Total FG%,50.0%,N/A,N/A,N/A,N/A,66.7%,0.0%,44.4%,43.8%,N/A,100.0%,0.0%,44.1%
-Shooting PPP,2.0,N/A,N/A,0.0,N/A,1.0,0.0,1.16,1.31,N/A,1.06,0.0,1.1
-% of Shooting Poss.,2.9%,0.0%,0.0%,2.9%,0.0%,5.9%,5.9%,23.5%,47.1%,0.0%,8.8%,2.9%,79.1% | 29
-Shooting FG%,100.0%,N/A,N/A,N/A,N/A,50.0%,0.0%,50.0%,43.8%,N/A,100.0%,0.0%,44.8%
-Shooting 2pt Att.,1,0,0,0,0,1,2,6,0,0,1,1,12
-Shooting 2pt FG%,100.0%,N/A,N/A,N/A,N/A,100.0%,0.0%,50.0%,N/A,N/A,100.0%,0.0%,50.0%
-Shooting 3pt Att.,0,0,0,0,0,1,0,0,16,0,0,0,17
-Shooting 3pt FG%,N/A,N/A,N/A,N/A,N/A,0.0%,N/A,N/A,43.8%,N/A,N/A,N/A,41.2%
-Passing PPP,0.0,0.0,N/A,N/A,N/A,1.5,N/A,0.75,N/A,N/A,0.0,N/A,0.67
-% of Passing Poss.,11.1%,11.1%,0.0%,0.0%,0.0%,22.2%,0.0%,44.4%,0.0%,0.0%,11.1%,0.0%,20.9% | 5
-Passing FG%,0.0%,N/A,N/A,N/A,N/A,100.0%,N/A,33.3%,N/A,N/A,N/A,N/A,40.0%
-Passing 2pt Att.,0,0,0,0,0,0,0,1,0,0,0,0,1
-Passing 2pt FG%,N/A,N/A,N/A,N/A,N/A,N/A,N/A,0.0%,N/A,N/A,N/A,N/A,0.0%
-Passing 3pt Att.,1,0,0,0,0,1,0,2,0,0,0,0,4
-Passing 3pt FG%,0.0%,N/A,N/A,N/A,N/A,100.0%,N/A,50.0%,N/A,N/A,N/A,N/A,50.0%
+,Total PPP,% of Poss.,Total TO,Total FG%,Shooting PPP,% of Shooting Poss.,Shooting TO,Shooting FG%,Shooting 2pt Att.,Shooting 2pt FG%,Shooting 3pt Att.,Shooting 3pt FG%,Passing PPP,% of Passing Poss.,Passing TO,Passing FG%,Passing 2pt Att.,Passing 2pt FG%,Passing 3pt Att.,Passing 3pt FG%
+POWELL,0.67,4.9%,0,33.3%,1.0,4.3%,0,50.0%,2,50.0%,0,N/A,0.0,7.1%,0,0.0%,0,N/A,1,0.0%
+WOOD,0.0,3.3%,2,N/A,N/A,0.0%,0,N/A,0,N/A,0,N/A,0.0,14.3%,2,N/A,0,N/A,0,N/A
+KLEBER,0.0,1.6%,0,0.0%,0.0,2.1%,0,0.0%,0,N/A,1,0.0%,N/A,0.0%,0,N/A,0,N/A,0,N/A
+MCGEE,0.0,1.6%,1,N/A,0.0,2.1%,1,N/A,0,N/A,0,N/A,N/A,0.0%,0,N/A,0,N/A,0,N/A
+OTHERS,N/A,0.0%,0,N/A,N/A,0.0%,0,N/A,0,N/A,0,N/A,N/A,0.0%,0,N/A,0,N/A,0,N/A
+ISO,0.83,9.8%,3,66.7%,0.67,6.4%,1,50.0%,1,100.0%,1,0.0%,1.0,21.4%,2,100.0%,0,N/A,1,100.0%
+Transition,1.4,8.2%,0,60.0%,1.0,8.5%,0,50.0%,4,50.0%,0,N/A,3.0,7.1%,0,100.0%,0,N/A,1,100.0%
+Attacking Closeouts,1.09,22.6%,2,50.0%,1.13,18.9%,1,57.1%,7,57.1%,0,N/A,1.02,34.9%,1,33.3%,1,0.0%,2,50.0%
+Catch & Shoot,1.17,37.7%,0,39.1%,1.17,48.9%,0,39.1%,0,N/A,23,39.1%,N/A,0.0%,0,N/A,0,N/A,0,N/A
+Off Ball Screens,0.0,1.6%,1,N/A,N/A,0.0%,0,N/A,0,N/A,0,N/A,0.0,7.1%,1,N/A,0,N/A,0,N/A
+Cutting,0.41,8.0%,2,50.0%,0.52,8.3%,1,50.0%,2,50.0%,0,N/A,0.0,7.1%,1,N/A,0,N/A,0,N/A
+Off. Rebounds,0.0,3.3%,0,0.0%,0.0,2.1%,0,0.0%,1,0.0%,0,N/A,0.0,7.1%,0,0.0%,0,N/A,1,0.0%
+PNR / DHO,0.29,11.5%,3,25.0%,0.5,57.1%,1,33.3%,2,50.0%,1,0.0%,0,42.9%,2,0.0%,0,N/A,1,0.0%
+TOTAL,0.93,61,11,42.9%,0.98,77.0%,4,42.9%,17,52.9%,25,36.0%,0.74,23.0%,7,42.9%,1,0.0%,6,50.0%
