@@ -10,45 +10,6 @@ def PPP(data):
     #Grab the column headers
     headers = data.columns
     
-    # Create the Overall PNR column
-    PNRData = data.iloc[:,:5]
-    
-    # Assign PNR variables
-    PNRshoot2FGA = PNRData.loc['shoot2FGA'].sum().sum()
-    PNRshoot2FGM = PNRData.loc['shoot2FGM'].sum().sum()
-    PNRshoot2FTA = PNRData.loc['shoot2FTA'].sum().sum()
-    PNRshoot2FTM = PNRData.loc['shoot2FTM'].sum().sum()
-    PNRshoot2TO = PNRData.loc['shoot2TO'].sum().sum()
-    PNRshoot3FGA = PNRData.loc['shoot3FGA'].sum().sum()
-    PNRshoot3FGM = PNRData.loc['shoot3FGM'].sum().sum()
-    PNRshoot3FTA = PNRData.loc['shoot3FTA'].sum().sum()
-    PNRshoot3FTM = PNRData.loc['shoot3FTM'].sum().sum()
-    PNRshoot3TO = PNRData.loc['shoot3TO'].sum().sum()
-    
-    PNRpass2FGA = PNRData.loc['pass2FGA'].sum().sum()
-    PNRpass2FGM = PNRData.loc['pass2FGM'].sum().sum()
-    PNRpass2FTA = PNRData.loc['pass2FTA'].sum().sum()
-    PNRpass2FTM = PNRData.loc['pass2FTM'].sum().sum()
-    PNRpass2TO = PNRData.loc['pass2TO'].sum().sum()
-    PNRpass3FGA = PNRData.loc['pass3FGA'].sum().sum()
-    PNRpass3FGM = PNRData.loc['pass3FGM'].sum().sum()
-    PNRpass3FTA = PNRData.loc['pass3FTA'].sum().sum()
-    PNRpass3FTM = PNRData.loc['pass3FTM'].sum().sum()
-    PNRpass3TO = PNRData.loc['pass3TO'].sum().sum()
-    
-    PNRFGA2 = PNRpass2FGA + PNRshoot2FGA
-    PNRFGM2 = PNRpass2FGM + PNRshoot2FGM
-    PNRFTA2 = PNRpass2FTA + PNRshoot2FTA
-    PNRFTM2 = PNRpass2FTM + PNRshoot2FTM
-    PNRTO2 = PNRpass2TO + PNRshoot2TO
-    PNRFGA3 = PNRpass3FGA + PNRshoot3FGA
-    PNRFGM3 = PNRpass3FGM + PNRshoot3FGM
-    PNRFTA3 = PNRpass3FTA + PNRshoot3FTA
-    PNRFTM3 = PNRpass3FTM + PNRshoot3FTM
-    PNRTO3 = PNRpass3TO + PNRshoot3TO
-    
-    
-    
     # Assign shooting data to new variables
     shoot2FGA = data.loc['shoot2FGA'].sum().sum()
     shoot2FGM = data.loc['shoot2FGM'].sum().sum()
@@ -173,180 +134,9 @@ def PPP(data):
         pass3FG_per = str(round((((pass3FGM) / (pass3FGA))* 100), 1)) + '%'
     except(ZeroDivisionError):
         pass3FG_per = 'N/A'
-        
-    # Calculate PNR possession totals
-    PNRshootPoss_totOVR = int((PNRshoot2FGA + (0.44 * (PNRshoot2FTA + PNRshoot3FTA)) + PNRshoot2TO + PNRshoot3FGA + PNRshoot3TO))
-    PNRshootPoss_2pt = int((PNRshoot2FGA + (0.44 *PNRshoot2FTA) + PNRshoot2TO))
-    PNRshootPoss_3pt = int((PNRshoot3FGA + (0.44 * PNRshoot3FTA) + PNRshoot3TO))
-    PNRpassingPoss_totOVR = int((PNRpass2FGA + (0.44 * (PNRpass2FTA + PNRpass3FTA)) + PNRpass2TO + PNRpass3FGA + PNRpass3TO))
-    PNRpassingPoss_2pt = (PNRpass2FGA + PNRpass2FTA + PNRpass2TO)
-    PNRpassingPoss_3pt = (PNRpass3FGA + PNRpass3FTA + PNRpass3TO)
-    PNRtotPossOVR = (PNRshootPoss_totOVR + PNRpassingPoss_totOVR)
-    PNRtotPoss_2ptOVR = (PNRshootPoss_2pt + PNRpassingPoss_2pt)
-    PNRtotPoss_3ptOVR = (PNRshootPoss_3pt + PNRpassingPoss_3pt) 
-    
-    # Calculate PNR shooting, passing, and total PPP
-    try:
-        if PNRshootPoss_totOVR == 0:
-            PNRshootingPPP_tot = 'N/A'
-        else:
-            PNRshootingPPP_tot = round(((PNRshoot2FGM * 2) + (PNRshoot3FGM * 3) + (PNRshoot2FTM + PNRshoot3FTM)) / (PNRshootPoss_totOVR),2)
-    except:
-        PNRshootingPPP_tot = 'N/A'
-    
-    try:
-        if PNRshootPoss_2pt == 0:
-            PNRshootingPPP_2pt = 'N/A'
-        else:
-            PNRshootingPPP_2pt = round(((PNRshoot2FGM * 2) + PNRshoot2FTM) / (PNRshootPoss_2pt),2)
-    except:
-        PNRshootingPPP_2pt = 'N/A'
-    
-    try:
-        if PNRshootPoss_3pt == 0:
-            PNRshootingPPP_3pt = 'N/A'
-        else:
-            PNRshootingPPP_3pt = round(((PNRshoot3FGM * 3) + PNRshoot3FTM) / (PNRshootPoss_3pt),2)
-    except:
-        PNRshootingPPP_3pt = 'N/A'
-
-    
-    try:
-        if PNRpassingPoss_totOVR == 0:
-            PNRpassingPPP_tot = 'N/A'
-        else:
-            PNRpassingPPP_tot = round(((PNRpass2FGM * 2) + (PNRpass3FGM * 3) + (PNRpass2FTM + PNRpass3FTM)) / (PNRpassingPoss_totOVR))
-    except:
-        PNRpassingPPP_tot = 'N/A'
-    
-    try:
-        if PNRpassingPoss_2pt == 0:
-            PNRpassingPPP_2pt = 'N/A'
-        else:
-            PNRpassingPPP_2pt = round(((PNRpass2FGM * 2) + PNRpass2FTM) / (PNRpassingPoss_2pt),2)
-    except:
-            PNRpassingPPP_2pt = 'N/A'
-    
-    try:
-        if PNRtotPoss_3ptOVR == 0:
-            PNRpassingPPP_3pt = 'N/A'
-        else:
-            PNRpassingPPP_3pt = round(((PNRpass3FGM * 3) + PNRpass3FTM) / (PNRtotPoss_3ptOVR),2)
-    except:
-        PNRpassingPPP_3pt = 'N/A'
-        
-    try:
-        if PNRtotPoss_2ptOVR == 0:
-            PNRppp_2pt = 'N/A'
-        else:
-            PNRppp_2pt = round((((PNRshoot2FGM + PNRpass2FGM)* 2) + (PNRshoot2FTM + PNRpass2FTM)) / (PNRtotPoss_2ptOVR),2)
-    except:
-        PNRppp_2pt = 'N/A'
-        
-    try:
-        if PNRtotPoss_3ptOVR == 0:
-            PNRppp_3pt = 'N/A'
-        else:
-            PNRppp_3pt = round((((PNRshoot3FGM + PNRpass3FGM) * 3) + (PNRshoot3FTM + PNRpass3FTM)) / (PNRtotPoss_3ptOVR),2)
-    except:
-        PNRppp_3pt = 'N/A'
-        
-    try:
-        if PNRtotPossOVR == 0:
-            PNRppp_tot = 'N/A'
-        else:
-            PNRppp_tot = round(((PNRFGM2 * 2) + (PNRFGM3 * 3) + (PNRFTM2 + PNRFTM3)) / (PNRtotPossOVR),2)
-    except:
-        PNRppp_tot = 'N/A'
-    
-    # Sum up PNR field goal attempts
-    PNRtot3FGA = PNRshoot3FGA + PNRpass3FGA
-    PNRtot2FGA = PNRshoot2FGA + PNRpass2FGA
-    PNRpassFGA = PNRpass2FGA + PNRpass3FGA
-    PNRshootFGA = PNRshoot2FGA + PNRshoot3FGA
-    PNRtotFGA = PNRshoot2FGA + PNRpass2FGA + PNRshoot3FGA + PNRpass3FGA
-    
-    # Calculate PNR possession percentages and shooting percentages. assign 'N/A' if no data exists
-    try:
-        PNRshootPoss_perOVR = str(round(((PNRshootPoss_totOVR / PNRtotPossOVR)*100),1)) + '%'
-    except(ZeroDivisionError):
-        PNRshootPoss_perOVR = 'N/A'
-        
-    try:
-        PNRpassingPoss_perOVR = str(round(((PNRpassingPoss_totOVR / PNRtotPossOVR)*100),1)) + '%'
-    except(ZeroDivisionError):
-        PNRpassingPoss_perOVR = 'N/A'
-        
-    try:
-        PNRtotFG_per = str(round(((PNRshoot2FGM + PNRshoot3FGM + PNRpass2FGM + PNRpass3FGM) / (PNRshoot2FGA + PNRpass2FGA + PNRshoot3FGA + PNRpass3FGA)* 100),1)) + '%'
-    except(ZeroDivisionError):
-        PNRtotFG_per = 'N/A'
-        
-    try:
-        PNRshootFG_per = str(round((((PNRshoot2FGM + PNRshoot3FGM) / (PNRshoot2FGA + PNRshoot3FGA))*100),1)) + '%'
-    except(ZeroDivisionError):
-        PNRshootFG_per = 'N/A'
-        
-    try:
-        if PNRpassFGA == 0:
-            PNRpassFG_per = 'N/A'
-        else:
-            PNRpassFG_per = str(round((((PNRpass2FGM + PNRpass3FGM) / (PNRpassFGA))*100),1)) + '%'
-    except:
-        PNRpassFG_per = 'N/A'
-        
-    try:
-        PNRtot2FG_per = str(round((((PNRpass2FGM + PNRshoot2FGM) / (PNRpass2FGA + PNRshoot2FGA))*100),1)) + '%'
-    except(ZeroDivisionError):
-        PNRtot2FG_per = 'N/A'
-        
-    try:
-        PNRtot3FG_per = str(round((((PNRpass3FGM + PNRshoot3FGM) / (PNRpass3FGA + PNRshoot3FGA))*100),1)) + '%'
-    except(ZeroDivisionError):
-        PNRtot3FG_per = 'N/A'
-    
-    try:
-        PNRshoot2FG_per = str(round((((PNRshoot2FGM) / (PNRshoot2FGA))* 100), 1)) + '%'
-    except(ZeroDivisionError):
-        PNRshoot2FG_per = 'N/A'
-        
-    try:
-        if PNRshoot3FGA == 0:
-            PNRshoot3FG_per = 'N/A'
-        else:
-            PNRshoot3FG_per = str(round((((PNRshoot3FGM) / (PNRshoot3FGA))* 100), 1)) + '%'
-    except(ZeroDivisionError):
-        PNRshoot3FG_per = 'N/A'
-    
-    try:
-        if PNRpass2FGA == 0:
-            PNRpass2FG_per = 'N/A'
-        else:
-            PNRpass2FG_per = str(round((((PNRpass2FGM) / (PNRpass2FGA))* 100), 1)) + '%'
-    except:
-        PNRpass2FG_per = 'N/A'
-        
-    try:
-        if PNRpass3FGA == 0:
-            PNRpass3FG_per = 'N/A'
-        else:
-            PNRpass3FG_per = str(round((((PNRpass3FGM) / (PNRpass3FGA))* 100), 1)) + '%'
-    except(ZeroDivisionError):
-        PNRpass3FG_per = 'N/A'
-        
-    try:
-        PNRtotPoss = (PNRshootPoss_totOVR + PNRpassingPoss_totOVR)
-    except(ZeroDivisionError):
-        PNRtotPoss = 'N/A'
-        
-    try:
-        PNRtotPoss_per = str(round(((PNRtotPoss / totPossOVR)*100),1)) + '%'
-    except(ZeroDivisionError):
-        PNRtotPoss_per = 'N/A'
     
     # Calculate turnovers an turnover percentage
     total_to = TO2 + TO3
-    pnr_to = PNRTO2 + PNRTO3
     total_to_per = str(round((((total_to * 100) / totPossOVR)),1)) + '%'
     
     # Create the index
@@ -356,11 +146,6 @@ def PPP(data):
     
     # Create the PPP DataFrame
     data_df = pd.DataFrame(columns=headers, index=index)
-    
-    # Create 'PNR' column using PNR data
-    data_df['PNR'] = [str(PNRppp_tot), (str(PNRtotPoss_per)), pnr_to, (str(PNRtotFG_per)), 
-                        str(PNRshootingPPP_tot), str(PNRshootPoss_perOVR), str(PNRshootFG_per), str(PNRshoot2FGA), str(PNRshoot2FG_per), str(PNRshoot3FGA), str(PNRshoot3FG_per),
-                        str(PNRpassingPPP_tot), str(PNRpassingPoss_perOVR), str(PNRpassFG_per), str(PNRpass2FGA), str(PNRpass2FG_per), str(PNRpass3FGA), str(PNRpass3FG_per)]
     
     #Create the 'TOTAL' column at the end of the dataframe
     data_df['TOTAL'] = [str(ppp_tot), (str(totPossOVR)), total_to_per, (str(totFG_per)), 
@@ -540,7 +325,8 @@ def PPP(data):
     #print(timeEnd - timeStart)
     
     # Rename column headers
-    data_df = data_df.rename(columns={'TRAN' : 'Transition', 'ACO' : 'Attacking Closeouts', "C/S" : "Catch & Shoot", "OBS" : "Off Ball Screens", "CUT" : "Cutting", "OREB" : "Off. Rebounds", "PNR" :"PNR / DHO"})
+    data_df = data_df.rename(columns={'PNR BH' : 'PNR Ball Handler', 'PNR SC' : 'PNR Screener', "DHO BH" : "DHO Ball Handler", "DHO SC" : "DHO Screener", "DBL BH" : "DBL Ball Handler", "DBL SC" : "DBL Screener",
+                                      "ISO" : "ISOLATION", "TRAN" : "TRANSITION", "ACO" : "Attacking Closeouts", "C/S" : "Catch & Shoot", "OBS" : "Off Ball Screens", "CUT" : "Cutting", "OREB" : "Off. Rebounds"})
     
     data_df = data_df.transpose()
     
