@@ -77,42 +77,42 @@ def PPP(data):
     
     # Calculate possesion percentage and shooting percentage for overall stats, assign 'N/A' if no data exists
     try:
-        shootPoss_perOVR = str(round(((shootPoss_totOVR / totPossOVR)*100),1)) + '%'
+        shootPoss_perOVR = round(((shootPoss_totOVR / totPossOVR)*100),1)
     except(ZeroDivisionError):
         shootPoss_perOVR = 'N/A'
     
     try:
-        passingPoss_perOVR = str(round(((passingPoss_totOVR / totPossOVR)*100),1)) + '%'
+        passingPoss_perOVR = round(((passingPoss_totOVR / totPossOVR)*100),1)
     except(ZeroDivisionError):
         passingPoss_perOVR = 'N/A'
         
     try:
-        totFG_per = str(round(((shoot2FGM + shoot3FGM + pass2FGM + pass3FGM) / (shoot2FGA + pass2FGA + shoot3FGA + pass3FGA)* 100),1)) + '%'
+        totFG_per = round(((shoot2FGM + shoot3FGM + pass2FGM + pass3FGM) / (shoot2FGA + pass2FGA + shoot3FGA + pass3FGA)* 100),1)
     except(ZeroDivisionError):
         totFG_per = 'N/A'
         
     try:
-        shootFG_per = str(round((((shoot2FGM + shoot3FGM) / (shoot2FGA + shoot3FGA))*100),1)) + '%'
+        shootFG_per = round((((shoot2FGM + shoot3FGM) / (shoot2FGA + shoot3FGA))*100),1)
     except(ZeroDivisionError):
         shootFG_per = 'N/A'
         
     try:
-        passFG_per = str(round((((pass2FGM + pass3FGM) / (pass2FGA + pass3FGA))*100),1)) + '%'
+        passFG_per = round((((pass2FGM + pass3FGM) / (pass2FGA + pass3FGA))*100),1)
     except(ZeroDivisionError):
         passFG_per = 'N/A'
         
     try:
-        tot2FG_per = str(round((((pass2FGM + shoot2FGM) / (pass2FGA + shoot2FGA))*100),1)) + '%'
+        tot2FG_per = round((((pass2FGM + shoot2FGM) / (pass2FGA + shoot2FGA))*100),1)
     except(ZeroDivisionError):
         tot2FG_per = 'N/A'
         
     try:
-        tot3FG_per = str(round((((pass3FGM + shoot3FGM) / (pass3FGA + shoot3FGA))*100),1)) + '%'
+        tot3FG_per = round((((pass3FGM + shoot3FGM) / (pass3FGA + shoot3FGA))*100),1)
     except(ZeroDivisionError):
         tot3FG_per = 'N/A'
         
     try:
-        shoot2FG_per = str(round((((shoot2FGM) / (shoot2FGA))* 100), 1)) + '%'
+        shoot2FG_per = round((((shoot2FGM) / (shoot2FGA))* 100), 1)
     except(ZeroDivisionError):
         shoot2FG_per = 'N/A'
     
@@ -121,23 +121,23 @@ def PPP(data):
         if shoot3FGA == 0:  
             shoot3FG_per = 'N/A'
         else:
-            shoot3FG_per = str(round((((shoot3FGM) / (shoot3FGA))* 100), 1)) + "%"
+            shoot3FG_per = round((((shoot3FGM) / (shoot3FGA))* 100), 1)
     except:
         shoot3FG_per = 'N/A'
         
     try:
-        pass2FG_per = str(round((((pass2FGM) / (pass2FGA))* 100), 1)) + '%'
+        pass2FG_per = round((((pass2FGM) / (pass2FGA))* 100), 1)
     except(ZeroDivisionError):
         pass2FG_per = 'N/A'
         
     try:
-        pass3FG_per = str(round((((pass3FGM) / (pass3FGA))* 100), 1)) + '%'
+        pass3FG_per = round((((pass3FGM) / (pass3FGA))* 100), 1)
     except(ZeroDivisionError):
         pass3FG_per = 'N/A'
     
     # Calculate turnovers an turnover percentage
     total_to = TO2 + TO3
-    total_to_per = str(round((((total_to * 100) / totPossOVR)),1)) + '%'
+    total_to_per = round((((total_to * 100) / totPossOVR)),1)
     
     # Create the index
     index = ['Total PPP', '% of Poss.', 'Total TO', 'Total FG%', 
@@ -211,7 +211,7 @@ def PPP(data):
         
         shootPoss_tot = shoot2FGA + (0.44*(shoot2FTA + shoot3FTA)) + shoot2TO + shoot3FGA + shoot3TO
         try:
-            shootPoss_per = str(round(((shootPoss_tot / shootPoss_totOVR)*100),1)) + '%'
+            shootPoss_per = round(((shootPoss_tot / shootPoss_totOVR)*100),1)
         except(ZeroDivisionError):
             shootPoss_per = 'N/A'
             
@@ -220,17 +220,17 @@ def PPP(data):
         shootFGA = shoot2FGA + shoot3FGA
             
         try:
-            shootFG_per = str(round((((shoot2FGM + shoot3FGM) / (shoot2FGA + shoot3FGA))*100),1)) + '%'
+            shootFG_per = round((((shoot2FGM + shoot3FGM) / (shoot2FGA + shoot3FGA))*100),1)
         except(ZeroDivisionError):
             shootFG_per = 'N/A'
             
         try:
-            shoot2FG_per = str(round((((shoot2FGM) / (shoot2FGA))* 100), 1)) + '%'
+            shoot2FG_per = round((((shoot2FGM) / (shoot2FGA))* 100), 1)
         except(ZeroDivisionError):
             shoot2FG_per = 'N/A'
             
         try:
-            shoot3FG_per = str(round((((shoot3FGM) / (shoot3FGA))* 100), 1)) + '%'
+            shoot3FG_per = round((((shoot3FGM) / (shoot3FGA))* 100), 1)
         except(ZeroDivisionError):
             shoot3FG_per = 'N/A'
 
@@ -251,7 +251,7 @@ def PPP(data):
             
         passingPoss_tot =  pass2FGA + (0.44*(pass2FTA + pass3FTA)) + pass2TO + pass3FGA + pass3TO
         try:
-            passingPoss_per = str(round(((passingPoss_tot / passingPoss_totOVR)*100),1)) + '%'
+            passingPoss_per = round(((passingPoss_tot / passingPoss_totOVR)*100),1)
         except(ZeroDivisionError):
             passingPoss_per = 'N/A'
         
@@ -260,17 +260,17 @@ def PPP(data):
         passFGA = (pass2FGA + pass3FGA)
             
         try:
-            passFG_per = str(round((((pass2FGM + pass3FGM) / (pass2FGA + pass3FGA))*100),1)) + '%'
+            passFG_per = round((((pass2FGM + pass3FGM) / (pass2FGA + pass3FGA))*100),1)
         except(ZeroDivisionError):
             passFG_per = 'N/A'
             
         try:
-            pass2FG_per = str(round((((pass2FGM) / (pass2FGA))* 100), 1)) + '%'
+            pass2FG_per = round((((pass2FGM) / (pass2FGA))* 100), 1)
         except(ZeroDivisionError):
             pass2FG_per = 'N/A'
             
         try:
-            pass3FG_per = str(round((((pass3FGM) / (pass3FGA))* 100), 1)) + '%'
+            pass3FG_per = round((((pass3FGM) / (pass3FGA))* 100), 1)
         except(ZeroDivisionError):
             pass3FG_per = 'N/A'
         
@@ -292,7 +292,7 @@ def PPP(data):
         totPoss = (shootPoss_tot + passingPoss_tot)
             
         try:
-            totPoss_per = str(round(((totPoss / totPossOVR)*100),1)) + '%'
+            totPoss_per = round(((totPoss / totPossOVR)*100),1)
         except(ZeroDivisionError):
             totPoss_per = 'N/A'
             
@@ -301,19 +301,19 @@ def PPP(data):
         totFGA = (shoot2FGA + pass2FGA + shoot3FGA + pass3FGA)
         
         try: 
-            totFG_per = str(round((((shoot2FGM + shoot3FGM + pass2FGM + pass3FGM) / (shoot2FGA + pass2FGA + shoot3FGA + pass3FGA))* 100),1)) + '%'
+            totFG_per = round((((shoot2FGM + shoot3FGM + pass2FGM + pass3FGM) / (shoot2FGA + pass2FGA + shoot3FGA + pass3FGA))* 100),1)
         except(ZeroDivisionError):
             totFG_per = 'N/A'
             
         tot2FGA = shoot2FGA + pass2FGA
         try:
-            tot2FG_per = str(round((((pass2FGM + shoot2FGM) / (pass2FGA + shoot2FGA))*100),1)) + '%'
+            tot2FG_per = round((((pass2FGM + shoot2FGM) / (pass2FGA + shoot2FGA))*100),1)
         except(ZeroDivisionError):
             tot2FG_per = 'N/A'
             
         tot3FGA = shoot3FGA + pass3FGA
         try:
-            tot3FG_per = str(round((((pass3FGM + shoot3FGM) / (pass3FGA + shoot3FGA))*100),1)) + '%'
+            tot3FG_per = round((((pass3FGM + shoot3FGM) / (pass3FGA + shoot3FGA))*100),1)
         except(ZeroDivisionError):
             tot3FG_per = 'N/A'
        
