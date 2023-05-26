@@ -1,6 +1,6 @@
 Shot Type,PNR BH,PNR SC,DHO BH,DHO SC,DBL BH,DBL SC,ISO,TRAN,ACO,C/S,OBS,CUT,OREB
-shoot2FGA,0,6,0,0,0,1,0,1,0,0,0,6,6
-shoot2FGM,0,5,0,0,0,1,0,1,0,0,0,6,5
+shoot2FGA,0,8,0,0,0,1,0,1,0,0,0,7,6
+shoot2FGM,0,7,0,0,0,1,0,1,0,0,0,7,5
 shoot2FTA,0,6,0,0,0,0,0,2,0,0,0,1,1
 shoot2FTM,0,4,0,0,0,0,0,1,0,0,0,0,1
 shoot2TO,0,1,0,0,0,0,0,0,0,0,0,2,0
